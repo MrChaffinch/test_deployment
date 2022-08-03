@@ -1,7 +1,7 @@
 # test_deployment
 test_deployment
 
-...
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -55,9 +55,9 @@ spec:
                    values:
                      - test_deploy
              topologyKey: "kubernetes.io/hostname"
-...
+```
 
-...
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -69,9 +69,9 @@ spec:
  - port: 80
  selector:
    app: test_deploy
-...
+```
 
-...
+```
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
@@ -103,4 +103,4 @@ spec:
           target:
             type: Utilization
             averageUtilization: 80
-...
+```
